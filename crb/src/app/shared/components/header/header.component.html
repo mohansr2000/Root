@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid headerBar">
+        <div class="navbar-header heading">
+          <a class="navbar-brand heading" href="#">CertiBot</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+          <li>
+              <mat-form-field>
+                  <mat-select placeholder="Tenant">
+                    <mat-option [value]="1">
+                        Tenant 1
+                    </mat-option>
+                    <mat-option [value]="1">
+                        Tenant 2
+                      </mat-option>
+                      <mat-option [value]="1">
+                          Tenant 3
+                        </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+</nav>

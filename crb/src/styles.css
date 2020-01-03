@@ -1,0 +1,34 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* You can add global styles to this file, and also import other style files */
+.box {
+    margin:10px 0px;
+}
+.smBx-red {
+    border-radius: 10px !important;
+    color:#fff;
+    background: rgb(227,95,74);
+background: radial-gradient(circle, rgba(227,95,74,1) 4%, rgba(177,72,52,0.9738270308123249) 45%);
+}
+.smBx-green {
+    border-radius: 10px !important;
+    color:#fff;
+    background: rgb(138,227,74);
+background: radial-gradient(circle, rgba(138,227,74,1) 4%, rgba(45,166,31,0.9738270308123249) 52%);
+}
+.smBx-yellow {
+    border-radius: 10px !important;
+    color:#fff;
+    background: rgb(192,198,71);
+background: radial-gradient(circle, rgba(192,198,71,0.8953956582633054) 20%, rgba(238,240,99,0.9710259103641457) 89%);
+}
+.smBx-blue {
+    border-radius: 10px !important;
+    color:#fff;
+    background: rgb(74,184,227);
+    background: radial-gradient(circle, rgba(74,184,227,1) 4%, rgba(52,129,177,0.9738270308123249) 45%);}
+
+.redHeadCard {
+    border-top: 3px solid red;
+    border-radius: 10px !important;
+}

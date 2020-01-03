@@ -1,0 +1,22 @@
+
+.crbbox {
+    border: 1px solid red;
+}
+.summaryTable td {
+    padding: 0px 10px;
+    font-size: 18px;
+    border: 1px solid;
+}
+
+.todayTable td {
+    border: 1px solid #000;
+    border: 1px solid #000;
+    width: 15%;
+    min-width: 15%;
+    max-width: 15%;
+    padding: 5px;
+}
+.todayTable {
+    table-layout: fixed;
+    
+}

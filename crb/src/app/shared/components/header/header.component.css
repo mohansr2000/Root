@@ -1,0 +1,14 @@
+.heading {
+    color:#fff;
+    font-size: 30px !important;
+    font-family: monospace;
+    font-style: italic;
+}
+.headerBar {
+    background: rgb(195,70,34);
+background: linear-gradient(0deg, rgba(195,70,34,0.7553396358543417) 0%, rgba(253,45,86,0.6993172268907564) 100%);
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: black !important;
+}

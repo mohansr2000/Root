@@ -1,0 +1,166 @@
+<app-header></app-header>
+
+
+
+
+<div class="container box">
+    <div class="row box">
+      <div class="col-md-4">
+        <mat-card class="example-card smBx-blue">
+            <mat-card-header>
+                <mat-card-title><h3><span class="glyphicon glyphicon-file"></span> Summary</h3></mat-card-title>
+              </mat-card-header>
+            <mat-card-content>
+                  <div class="row">
+                      <table class="summaryTable">
+                        <tr><td>Total :</td><td>{{countDetails.totalCertificates}}</td></tr>
+                        <tr><td>Active :</td><td>{{countDetails.totalActiveCertificates}}</td><td>Expired :</td><td>{{countDetails.totalExpiredCertificates}}</td></tr>
+                      </table>
+                  </div>
+              </mat-card-content>
+          </mat-card>
+    </div>
+      <div class="col-md-4">
+          <mat-card class="example-card smBx-green">
+              <mat-card-header>
+                  <mat-card-title><h3> <span class="glyphicon glyphicon-refresh"></span> Renewed</h3></mat-card-title>
+                </mat-card-header>
+              <mat-card-content>
+                <table class="summaryTable">
+                  <tr><td>Today </td><td>{{countDetails.renewedData.today}}</td><td>7 Days :</td><td>{{countDetails.renewedData.week}}</td></tr>
+                  <tr><td> 30 Days:</td><td>{{countDetails.renewedData.month}}</td><td> 90 Days:</td><td>{{countDetails.renewedData.quarter}}</td></tr>
+                </table>
+                </mat-card-content>
+            </mat-card>
+      </div>
+      <div class="col-md-4">
+          <mat-card class="example-card smBx-red">
+              <mat-card-header>
+                  <mat-card-title><h3><span class="glyphicon glyphicon-remove"></span> Expire</h3></mat-card-title>
+                </mat-card-header>
+              <mat-card-content>
+                <table class="summaryTable">
+                  <tr><td>Today </td><td>{{countDetails.expiredData.today}}</td><td>7 Days :</td><td>{{countDetails.expiredData.week}}</td></tr>
+                  <tr><td> 30 Days:</td><td>{{countDetails.expiredData.month}}</td><td> 90 Days:</td><td>{{countDetails.expiredData.quarter}}</td></tr>
+                </table>
+                </mat-card-content>
+            </mat-card>
+      </div>
+      <!-- <div class="col-md-4">
+          <mat-card class="example-card smBx-yellow">
+              <mat-card-header>
+                  <mat-card-title><h3><span class="glyphicon glyphicon-user"></span> Tenants</h3></mat-card-title>
+                </mat-card-header>
+              <mat-card-content>
+                    <div class="row">
+                      
+                    </div>
+                </mat-card-content>
+            </mat-card>
+      </div> -->
+    </div>
+</div>
+
+<div class="container box">
+    <div class="row box"> 
+        <div class="col-md-12"><mat-card class="example-card redHeadCard">
+            <mat-card-header>
+              <mat-card-title><h3> <span class="glyphicon glyphicon-inbox"></span>  Expire Today</h3></mat-card-title>
+              <mat-card-subtitle>Certificates expire today</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let today of todaysData">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{today.certificateName}}
+                    </mat-panel-title>
+                    <mat-panel-title>
+                      {{today.hostName}}
+                  </mat-panel-title>
+                  <mat-panel-title>
+                    {{today.certificateAuthorityName}}
+                </mat-panel-title>
+                <mat-panel-title>
+                  {{today.validTo}}
+              </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  
+                  <table class="todayTable">
+                    <tr><td>Certificate Name: </td><td> <b>{{today.certificateName}}</b></td> <td> Certificate Authority Name:</td><td> <b>{{today.certificateAuthorityName}}</b></td></tr>
+                      <tr><td>Tenant Name</td><td> <b>{{today.tenantName}}</b></td> <td> Host Name</td><td> <b>{{today.hostName}}</b></td> </tr>
+                      <tr><td>Certificate Type</td><td> <b>{{today.certificateType}}</b></td> <td> Certificate Status</td><td> <b>{{today.certificateStatus}}</b></td> </tr>
+                      <tr><td>Valid From</td><td> <b>{{today.validFrom}}</b></td> <td> Valid To</td><td> <b>{{today.validTo}}</b></td> </tr>
+                  </table>
+                  <br><br>
+                  <button mat-raised-button color="accent">View</button>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </mat-card-content>
+          </mat-card></div>
+      </div>
+</div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6"><mat-card class="example-card redHeadCard">
+            <mat-card-header>
+              <mat-card-title><h3> <span class="glyphicon glyphicon-credit-card"></span> Expire in 7 Days</h3></mat-card-title>
+              <mat-card-subtitle>Certificates expires in next 7 Days</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let week of todaysData">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{week.certificateName}}
+                    </mat-panel-title>
+                <mat-panel-title>
+                  {{week.validTo}}
+              </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <hr>
+                  <table class="todayTable">
+                    <tr><td>Certificate Name: </td><td> <b>{{week.certificateName}}</b></td> <td> Certificate Authority Name:</td><td> <b>{{week.certificateAuthorityName}}</b></td></tr>
+                    <tr><td>Tenant Name</td><td> <b>{{week.tenantName}}</b></td> <td> Host Name</td><td> <b>{{week.hostName}}</b></td> </tr>
+                    <tr><td>Certificate Type</td><td> <b>{{week.certificateType}}</b></td> <td> Certificate Status</td><td> <b>{{week.certificateStatus}}</b></td> </tr>
+                    <tr><td>Valid From</td><td> <b>{{week.validFrom}}</b></td> <td> Valid To</td><td> <b>{{week.validTo}}</b></td> </tr>
+                  </table>
+                  <br>
+                  <button mat-raised-button color="accent">View</button>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </mat-card-content>
+          </mat-card></div>
+          <div class="col-md-6"><mat-card class="example-card redHeadCard">
+              <mat-card-header>
+                <mat-card-title><h3><span class="glyphicon glyphicon-credit-card"></span> Expire in 30 Days</h3></mat-card-title>
+                <mat-card-subtitle>Certificates expires in next 30 Days</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <mat-accordion>
+                  <mat-expansion-panel *ngFor="let month of monthData">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                          {{month.certificateName}}
+                      </mat-panel-title>
+                  <mat-panel-title>
+                    {{month.validTo}}
+                </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <hr>
+                    <table class="todayTable">
+                      <tr><td>Certificate Name: </td><td> <b>{{month.certificateName}}</b></td> <td> Certificate Authority Name:</td><td> <b>{{month.certificateAuthorityName}}</b></td></tr>
+                    <tr><td>Tenant Name</td><td> <b>{{month.tenantName}}</b></td> <td> Host Name</td><td> <b>{{month.hostName}}</b></td> </tr>
+                    <tr><td>Certificate Type</td><td> <b>{{month.certificateType}}</b></td> <td> Certificate Status</td><td> <b>{{month.certificateStatus}}</b></td> </tr>
+                    <tr><td>Valid From</td><td> <b>{{month.validFrom}}</b></td> <td> Valid To</td><td> <b>{{month.validTo}}</b></td> </tr>
+                    </table>
+                    <br><br>
+                    <button mat-raised-button color="accent">View</button>
+                  </mat-expansion-panel>
+                </mat-accordion>
+              </mat-card-content>
+            </mat-card></div>
+    </div>
+   
+  </div>
+  <br><br>
